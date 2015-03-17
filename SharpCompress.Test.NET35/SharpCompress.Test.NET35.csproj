@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC9641EB-E548-4D1C-8116-64DFF528B884}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpCompress.Test</RootNamespace>
+    <AssemblyName>SharpCompress.Test.NET35</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\sharpcompress\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SharpCompressTest.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchiveTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GZip\GZipArchiveTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GZip\GZipWriterTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rar\RarArchiveTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rar\RarHeaderFactoryTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rar\RarReaderTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReaderTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RewindableStreamTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SevenZip\SevenZipArchiveTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Streams\StreamTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tar\TarArchiveTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tar\TarReaderTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tar\TarWriterTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TestStream.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WriterTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Zip\ZipArchiveTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Zip\ZipReaderTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Zip\ZipWriterTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SharpCompressTest.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharpCompress\SharpCompress.NET2.csproj">
+      <Project>{9a6f69dc-258d-4eb4-859e-09efc7a14a3f}</Project>
+      <Name>SharpCompress.NET2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
